@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function () {
+module.exports = function (resultPath) {
     let result;
     return {
         before: function (next) {
@@ -8,13 +8,13 @@ module.exports = function () {
             next();
         },
 
-        process: function (next, input, output, args, content, path) {
+        process: function (next, input, output, config, content, path) {
             result += (content || '') + '\n';
             next();
         },
 
-        after: function (next, input, output, args) {
-            output.set(args[1] || 'concat.txt', result);
+        after: function (next, input, output, config) {
+            output.set('' + (resultPath || 'concat.txt'), result);
             next();
         }
     };
