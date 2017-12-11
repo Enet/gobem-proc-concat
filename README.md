@@ -1,4 +1,7 @@
 # gobem-proc-concat
+**DON'T USE THE PACKAGE. IT'S DEPRECATED!!!
+USE [webpack](https://github.com/webpack) INSTEAD.**
+
 This processor for [gobem](https://github.com/Enet/gobem) concatenates all files in a single one. By default the path of the output's file is `concat.txt`, but you can change it in the first argument.
 
 ### Example for **build.js**
